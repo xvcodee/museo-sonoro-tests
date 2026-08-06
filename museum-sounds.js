@@ -65,14 +65,24 @@
       tone(220, .8, { type: 'sine', volume: .018, slide: 196 });
       tone(329.63, .55, { type: 'sine', volume: .012, delay: .12 });
     },
+    eco(options = {}) {
+      const distance = Math.max(2, Math.min(24, Number(options.distance) || 9));
+      const reverb = Math.max(0, Math.min(100, Number(options.reverb) || 64));
+      const returnDelay = .1 + distance * .017;
+      const returnVolume = .012 + reverb / 2900;
+      tone(440, .32, { type: 'sine', volume: .048, slide: 392 });
+      tone(330, .46, { type: 'sine', volume: returnVolume * 1.5, delay: returnDelay, slide: 294 });
+      tone(247, .64, { type: 'triangle', volume: returnVolume, delay: returnDelay * 2.05, slide: 220 });
+      tone(196, .76, { type: 'sine', volume: returnVolume * .62, delay: returnDelay * 3.15, slide: 174 });
+    },
     c() { tone(261.63, 1.35, { volume: .055 }); tone(392, .95, { volume: .022, delay: .1 }); },
     e() { tone(329.63, 1.2, { volume: .048 }); tone(659.25, .82, { volume: .016, delay: .12 }); },
     g() { tone(392, 1.4, { volume: .052 }); tone(587.33, .9, { volume: .018, delay: .14 }); },
     b() { tone(493.88, 1.3, { volume: .045 }); tone(739.99, .75, { volume: .014, delay: .15 }); }
   };
 
-  function play(name) {
-    if (cues[name]) cues[name]();
+  function play(name, options) {
+    if (cues[name]) cues[name](options);
   }
 
   function playOnce(name, key = name) {

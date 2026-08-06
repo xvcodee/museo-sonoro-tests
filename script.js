@@ -266,6 +266,57 @@ document.addEventListener('sonora:trackchange', event => {
 });
 document.querySelectorAll('.track-card').forEach(card => card.classList.toggle('is-selected', card.dataset.track === window.AmbientMusic?.current()));
 
+const echoChamber = document.querySelector('#echo-chamber');
+const echoPulse = document.querySelector('#echo-pulse');
+const echoDistance = document.querySelector('#echo-distance');
+const echoReverb = document.querySelector('#echo-reverb');
+const echoDistanceOutput = document.querySelector('#echo-distance-output');
+const echoReverbOutput = document.querySelector('#echo-reverb-output');
+const echoDistanceLabel = document.querySelector('#echo-distance-label');
+const echoStatus = document.querySelector('#echo-status');
+
+function updateEchoChamber() {
+  if (!echoChamber) return;
+  const distance = Number(echoDistance?.value || 9);
+  const reverb = Number(echoReverb?.value || 64);
+  echoChamber.style.setProperty('--echo-distance', String(.58 + distance / 15));
+  echoChamber.style.setProperty('--echo-reverb', String(.16 + reverb / 120));
+  echoDistanceOutput.textContent = `${String(distance).padStart(2, '0')} m`;
+  echoDistanceLabel.textContent = `${String(distance).padStart(2, '0')} M`;
+  echoReverbOutput.textContent = `${reverb}%`;
+}
+
+function sendEchoPulse() {
+  if (!echoChamber) return;
+  const distance = Number(echoDistance?.value || 9);
+  const reverb = Number(echoReverb?.value || 64);
+  window.MuseumSounds?.play('eco', { distance, reverb });
+  echoChamber.classList.remove('is-echoing');
+  void echoChamber.offsetWidth;
+  echoChamber.classList.add('is-echoing');
+  echoPulse?.setAttribute('aria-pressed', 'true');
+  echoStatus.textContent = `RETORNO A ${String(distance).padStart(2, '0')} M / ${reverb}% DE AIRE`;
+  window.setTimeout(() => {
+    echoChamber.classList.remove('is-echoing');
+    echoPulse?.setAttribute('aria-pressed', 'false');
+    echoStatus.textContent = 'EL ESPACIO ESTÁ EN CALMA';
+  }, 2100);
+}
+
+echoPulse?.addEventListener('click', sendEchoPulse);
+echoDistance?.addEventListener('input', updateEchoChamber);
+echoReverb?.addEventListener('input', updateEchoChamber);
+echoChamber?.addEventListener('pointermove', event => {
+  const bounds = echoChamber.getBoundingClientRect();
+  echoChamber.style.setProperty('--echo-x', `${((event.clientX - bounds.left) / bounds.width * 100).toFixed(1)}%`);
+  echoChamber.style.setProperty('--echo-y', `${((event.clientY - bounds.top) / bounds.height * 100).toFixed(1)}%`);
+});
+echoChamber?.addEventListener('pointerleave', () => {
+  echoChamber.style.setProperty('--echo-x', '50%');
+  echoChamber.style.setProperty('--echo-y', '47%');
+});
+updateEchoChamber();
+
 const paywall = document.querySelector('#visit-paywall');
 document.querySelectorAll('[data-paywall-open]').forEach(button => button.addEventListener('click', () => paywall?.showModal()));
 document.querySelector('[data-paywall-close]')?.addEventListener('click', () => paywall?.close());
