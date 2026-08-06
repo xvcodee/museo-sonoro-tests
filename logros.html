@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101720" />
+    <meta name="description" content="Registro personal de logros y señales descubiertas en SONORA." />
+    <title>Registro de logros — SONORA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="enhancements.css" />
+    <link rel="stylesheet" href="experience.css" />
+    <link rel="stylesheet" href="soundrooms.css" />
+    <link rel="stylesheet" href="polish.css" />
+    <link rel="stylesheet" href="interactions.css" />
+    <link rel="stylesheet" href="refinements.css" />
+    <link rel="stylesheet" href="achievements.css" />
+    <link rel="stylesheet" href="logros.css" />
+  </head>
+  <body class="logros-page simple-page">
+    <div class="grain" aria-hidden="true"></div>
+    <audio id="ambient-music" loop preload="metadata"><source src="https://upload.wikimedia.org/wikipedia/commons/5/50/Nocturne_Op._9_no._2_in_E_flat_major.mp3" type="audio/mpeg" /></audio>
+    <header class="site-header logros-header">
+      <a class="wordmark" href="assets/easter-egg.png" aria-label="SONORA, sorpresa">SONORA<span>®</span></a>
+      <button class="menu-toggle" type="button" data-simple-menu aria-expanded="false" aria-controls="navigation"><span></span><span></span><span class="sr-only">Abrir menú</span></button>
+      <nav id="navigation" aria-label="Navegación principal"><a href="index.html#museo">El museo</a><a href="coleccion.html">Colección</a><a href="index.html#experiencia">Experiencia</a><a href="juegos.html">Juegos</a><a href="logros.html" aria-current="page">Logros</a></nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Activar modo oscuro"><span aria-hidden="true">◐</span><b>Oscuro</b></button>
+      <button class="ambient-toggle" id="ambient-toggle" type="button" aria-pressed="false"><span class="ambient-icon">♩</span> Ambiente <b>OFF</b></button>
+      <a class="header-cta" href="juegos.html">Continuar recorrido <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="registry-hero" aria-labelledby="registry-title">
+        <div class="registry-copy"><p class="eyebrow">SONORA / REGISTRO PERSONAL</p><h1 id="registry-title">Señales que<br /><em>ya son tuyas.</em></h1><p>Este archivo no mide velocidad. Guarda los momentos en los que elegiste atender: una nota, una distancia, un silencio o una pregunta difícil.</p></div>
+        <div class="registry-hero-orbit" aria-hidden="true"><i></i><i></i><i></i><b></b><span>ARCHIVO<br />DE ESCUCHA</span></div>
+        <p class="registry-hero-note">EL PROGRESO SE GUARDA EN ESTE DISPOSITIVO.</p>
+      </section>
+
+      <section class="registry-overview" aria-label="Resumen de logros">
+        <div class="registry-progress-card"><div class="registry-ring" data-registry-ring><span><b data-registry-count>0</b><small>/ 6</small></span></div><div><p class="eyebrow">Tu constelación</p><h2 data-registry-label>0 señales recuperadas.</h2><p data-registry-percentage>0% del archivo personal explorado.</p></div></div>
+        <aside class="registry-next"><p class="eyebrow">PRÓXIMA SEÑAL</p><span data-next-tier>EN ESPERA</span><h2 data-next-title>El museo espera tu primera escucha.</h2><p data-next-description>Abrí una sala, probá una experiencia y el registro empezará a responder.</p><a data-next-link href="index.html">Ir al museo <b>↗</b></a></aside>
+      </section>
+
+      <section class="registry-collection" aria-labelledby="registry-collection-title">
+        <div class="registry-collection-head"><div><span class="section-index">R / 01</span><p class="eyebrow">Catálogo recuperable</p></div><h2 id="registry-collection-title">Tu archivo<br /><em>de escucha.</em></h2><div class="registry-qol"><button type="button" data-registry-filter="all" class="is-active">Todo</button><button type="button" data-registry-filter="unlocked">Descubiertos</button><button type="button" data-registry-filter="locked">En espera</button><button type="button" data-page-motion aria-pressed="false">Reducir movimiento</button></div></div>
+        <div class="registry-grid" data-registry-grid aria-live="polite"></div>
+      </section>
+
+      <section class="registry-method"><div><span class="section-index">R / 02</span><p class="eyebrow">Cómo leer el registro</p></div><h2>No todo lo que importa<br /><em>se puede contar.</em></h2><p>Los logros no cierran el museo: abren nuevas formas de volver. Una señal recuperada es una invitación a escuchar con más detalle la siguiente sala.</p><a href="juegos.html" class="registry-return">Volver al gabinete de juegos <span>→</span></a></section>
+    </main>
+
+    <footer><a class="wordmark" href="index.html">SONORA<span>®</span></a><p>Museo Digital de la Percepción SONORA<br />Funes · 2026</p><div class="footer-links"><a href="https://instagram.com/fran.dubua/" target="_blank" rel="noreferrer">Instagram</a><button class="contact-copy" type="button" data-contact-email="riojinzxc@gmail.com">Contacto</button><a href="index.html">Inicio</a></div><details class="credits"><summary>Créditos del proyecto <span>+</span></summary><dl><div><dt>Director del Proyecto</dt><dd>Dubois Francisco</dd></div><div><dt>Programador Principal</dt><dd>Dubois Francisco</dd></div><div><dt>Desarrollador web</dt><dd>Da Campo Santiago</dd></div><div><dt>Diseñador UX/UI</dt><dd>Da Campo Santiago</dd></div><div><dt>Diseñador gráfico</dt><dd>Da Campo Santiago, Gemini, ChatGPT</dd></div><div><dt>Director creativo</dt><dd>Da Campo Santiago</dd></div><div><dt>Investigación y contenido</dt><dd>Dubois Francisco, ChatGPT</dd></div><div><dt>Edición de audio</dt><dd>Dubois Francisco</dd></div><div><dt>Testing</dt><dd>Da Campo Santiago, Mosto Joaquín</dd></div><div><dt>Agradecimientos</dt><dd>Soledad Lanzini, 4to "B"</dd></div></dl></details><small><span>© SONORA — Todos los derechos reservados.</span><span class="affiliate">Afiliado con la Compañía 67©</span></small></footer>
+
+    <script src="museum-sounds.js"></script>
+    <script src="ambient.js"></script>
+    <script src="museum-ui.js"></script>
+    <script src="achievements.js"></script>
+    <script src="logros.js"></script>
+  </body>
+</html>

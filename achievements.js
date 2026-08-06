@@ -4,6 +4,7 @@
   if (window.SonoraAchievements) return;
 
   const storageKey = 'sonora-achievements-v1';
+  const motionStorageKey = 'sonora-motion-preference';
   const definitions = Object.freeze([
     {
       id: 'silencio',
@@ -52,6 +53,21 @@
   let stored = readStorage();
   let ui = null;
   let toastTimer = null;
+
+  function isReducedMotion() {
+    try { return localStorage.getItem(motionStorageKey) === 'reduced'; } catch (_) { return false; }
+  }
+
+  function setMotionPreference(reduced) {
+    document.documentElement.dataset.motion = reduced ? 'reduced' : 'full';
+    try { localStorage.setItem(motionStorageKey, reduced ? 'reduced' : 'full'); } catch (_) { /* La preferencia queda activa durante esta visita. */ }
+    if (ui?.motion) {
+      ui.motion.setAttribute('aria-pressed', String(reduced));
+      ui.motion.textContent = reduced ? 'Activar movimiento' : 'Reducir movimiento';
+    }
+  }
+
+  setMotionPreference(isReducedMotion());
 
   function readStorage() {
     try {
@@ -148,6 +164,10 @@
       '  <div class="sonora-achievements-progress" aria-hidden="true"><span data-achievement-progress></span></div>',
       '  <section class="sonora-achievements-grid" data-achievement-grid aria-label="Lista de logros"></section>',
       '  <p class="sonora-achievement-all" data-achievement-all><b>Consejo:</b> algunos registros sólo aparecen cuando el museo siente que los buscaste de verdad.</p>',
+      '  <div class="sonora-achievement-toolbar">',
+      '    <a href="logros.html">Abrir archivo completo <span>↗</span></a>',
+      '    <button type="button" data-achievement-motion aria-pressed="false">Reducir movimiento</button>',
+      '  </div>',
       '</div>'
     ].join('');
 
@@ -165,11 +185,13 @@
       summary: dialog.querySelector('[data-achievement-summary]'),
       progress: dialog.querySelector('[data-achievement-progress]'),
       grid: dialog.querySelector('[data-achievement-grid]'),
-      all: dialog.querySelector('[data-achievement-all]')
+      all: dialog.querySelector('[data-achievement-all]'),
+      motion: dialog.querySelector('[data-achievement-motion]')
     };
 
     launcher.addEventListener('click', () => dialog.open ? close() : open());
     dialog.querySelector('.sonora-achievements-close').addEventListener('click', close);
+    ui.motion.addEventListener('click', () => setMotionPreference(document.documentElement.dataset.motion !== 'reduced'));
     dialog.addEventListener('click', event => { if (event.target === dialog) close(); });
     dialog.addEventListener('close', () => launcher.setAttribute('aria-expanded', 'false'));
     dialog.addEventListener('cancel', () => launcher.setAttribute('aria-expanded', 'false'));
@@ -177,6 +199,7 @@
       if (event.key === 'Escape' && dialog.classList.contains('is-fallback-open')) close();
     });
     refreshUI();
+    setMotionPreference(document.documentElement.dataset.motion === 'reduced');
   }
 
   function open() {
@@ -237,7 +260,7 @@
     }, 4600);
   }
 
-  const api = Object.freeze({ unlock, isUnlocked, getAll, open, close, definitions: getAll });
+  const api = Object.freeze({ unlock, isUnlocked, getAll, open, close, setMotionPreference, definitions: getAll });
   window.SonoraAchievements = api;
   document.addEventListener('sonora:achievement', refreshUI);
 
