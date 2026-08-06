@@ -240,7 +240,12 @@ function playSilenceNote(step, button) {
   silenceStatus.textContent = `${button.textContent} / CLAVE ${silenceKey.value}`;
 }
 
-document.querySelectorAll('.silence-note').forEach(button => button.addEventListener('click', () => playSilenceNote(Number(button.dataset.step), button)));
+const silenceVisited = new Set();
+document.querySelectorAll('.silence-note').forEach(button => button.addEventListener('click', () => {
+  playSilenceNote(Number(button.dataset.step), button);
+  silenceVisited.add(button.dataset.step);
+  if (silenceVisited.size >= 9) window.SonoraAchievements?.unlock('silencio');
+}));
 silenceKey?.addEventListener('change', refreshSilenceNotes);
 silenceVolume?.addEventListener('input', () => {
   silenceVolumeOutput.textContent = `${silenceVolume.value}%`;

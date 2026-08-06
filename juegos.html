@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11141c" />
+    <meta name="description" content="Gabinete de juegos de SONORA: experiencias y quizzes para afinar la percepción auditiva." />
+    <title>Gabinete de juegos — SONORA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="enhancements.css" />
+    <link rel="stylesheet" href="experience.css" />
+    <link rel="stylesheet" href="soundrooms.css" />
+    <link rel="stylesheet" href="polish.css" />
+    <link rel="stylesheet" href="interactions.css" />
+    <link rel="stylesheet" href="refinements.css" />
+    <link rel="stylesheet" href="juegos.css" />
+    <link rel="stylesheet" href="juegos-avanzado.css" />
+  </head>
+  <body class="games-page">
+    <div class="grain" aria-hidden="true"></div>
+    <audio id="ambient-music" loop preload="metadata"><source src="https://upload.wikimedia.org/wikipedia/commons/5/50/Nocturne_Op._9_no._2_in_E_flat_major.mp3" type="audio/mpeg" /></audio>
+    <header class="site-header games-header">
+      <a class="wordmark" href="assets/easter-egg.png" aria-label="SONORA, sorpresa">SONORA<span>®</span></a>
+      <button class="menu-toggle" type="button" data-simple-menu aria-expanded="false" aria-controls="navigation"><span></span><span></span><span class="sr-only">Abrir menú</span></button>
+      <nav id="navigation" aria-label="Navegación principal"><a href="index.html#museo">El museo</a><a href="coleccion.html">Colección</a><a href="index.html#experiencia">Experiencia</a><a href="juegos.html" aria-current="page">Juegos</a><a href="index.html#visita">Visitar</a></nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Activar modo oscuro"><span aria-hidden="true">◐</span><b>Oscuro</b></button>
+      <button class="ambient-toggle" id="ambient-toggle" type="button" aria-pressed="false"><span class="ambient-icon">♩</span> Ambiente <b>OFF</b></button>
+      <a class="header-cta" href="coleccion.html">Ver archivo <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="games-hero" aria-labelledby="games-title">
+        <div class="games-hero-copy"><p class="eyebrow">SONORA / GABINETE DE JUEGOS</p><h1 id="games-title">Afiná el oído.<br /><em>Jugá a escuchar.</em></h1><p>Pequeñas experiencias para descubrir que la percepción sonora no vive sólo en la oreja: también vive en la memoria, el cuerpo, la distancia y la imaginación.</p><a href="#catalogo" class="games-start">Elegir una experiencia <span>↓</span></a></div>
+        <div class="games-hero-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b><span>09<br />FORMAS<br />DE JUGAR</span></div>
+        <div class="games-hero-note"><span>NO HAY RESPUESTAS PERFECTAS.</span><span>SÓLO MEJORES FORMAS DE ATENDER.</span></div>
+      </section>
+
+      <section class="games-intro" id="catalogo" aria-labelledby="catalog-title">
+        <div><span class="section-index">G / 01</span><p class="eyebrow">Catálogo de percepción</p></div>
+        <h2 id="catalog-title">Nueve puertas<br />para <em>escuchar distinto.</em></h2>
+        <p>Elegí una ficha. Cada juego abre una pequeña sala y dura apenas unos minutos.</p>
+      </section>
+
+      <section class="games-catalogue" aria-label="Catálogo de juegos y quizzes">
+        <article class="game-card game-radar"><span>01 / FRECUENCIA</span><div class="game-art radar-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div><h2>Radar de<br />frecuencias</h2><p>¿Podés ubicar un sonido en el grave, el medio o el agudo?</p><button type="button" class="game-open" data-open-game="radar">Jugar <b>↗</b></button></article>
+        <article class="game-card game-echo"><span>02 / DISTANCIA</span><div class="game-art echo-card-art" aria-hidden="true"><i></i><i></i><i></i></div><h2>Eco o<br />fuente</h2><p>Escuchá un retorno y deducí qué tan lejos está su origen.</p><button type="button" class="game-open" data-open-game="eco">Jugar <b>↗</b></button></article>
+        <article class="game-card game-memory"><span>03 / MEMORIA</span><div class="game-art memory-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h2>Memoria de<br />pulsos</h2><p>Conservá una breve melodía antes de que se disuelva.</p><button type="button" class="game-open" data-open-game="memoria">Jugar <b>↗</b></button></article>
+        <article class="game-card game-jurador"><span>04 / CRITERIO</span><div class="game-art jurador-art" aria-hidden="true"><i></i><i></i><i></i></div><h2>El<br /><em>jurador</em></h2><p>Un quiz sobre el gesto de escuchar antes de decidir.</p><button type="button" class="game-open" data-open-game="jurador">Responder <b>↗</b></button></article>
+        <article class="game-card game-space"><span>05 / ESPACIO</span><div class="game-art space-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h2>Arquitectura<br />del sonido</h2><p>Descubrí qué hace que una sala parezca grande, íntima o vacía.</p><button type="button" class="game-open" data-open-game="espacio">Responder <b>↗</b></button></article>
+        <article class="game-card game-mission"><span>06 / ATENCIÓN</span><div class="game-art mission-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h2>Misiones de<br />escucha</h2><p>Llevate una consigna para transformar el mundo en una sala.</p><button type="button" class="game-open" data-open-game="mision">Abrir misión <b>↗</b></button></article>
+        <article class="game-card game-interference"><span>07 / MÁSCARA</span><div class="game-art interference-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h2>Señal entre<br />interferencias</h2><p>Separá una voz de lo que compite por ocupar tu atención.</p><button type="button" class="game-open" data-open-game="interferencia">Resolver <b>↗</b></button></article>
+        <article class="game-card game-dilemma"><span>08 / CONTEXTO</span><div class="game-art dilemma-art" aria-hidden="true"><i></i><i></i><i></i></div><h2>Archivo<br />fragmentado</h2><p>Tomá decisiones cuando una grabación cuenta más de una historia.</p><button type="button" class="game-open" data-open-game="dilema">Investigar <b>↗</b></button></article>
+        <article class="game-card game-8d"><span>09 / ORIENTACIÓN</span><div class="game-art eight-d-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div><h2>Laboratorio<br /><em>8D</em></h2><p>Elegí un punto en el espacio y dejá que el sonido se acerque.</p><a class="game-open" href="#orientacion">Entrar <b>↓</b></a></article>
+      </section>
+
+      <section class="spatial-lab" id="orientacion" aria-labelledby="spatial-title">
+        <div class="spatial-copy"><span class="section-index">G / 02 · EXPERIENCIA ESPACIAL</span><p class="eyebrow">Laboratorio de orientación 8D</p><h2 id="spatial-title">Elegí un punto.<br /><em>Dejá que venga hacia vos.</em></h2><p>Con auriculares, elegí una coordenada del campo. La fuente nace allí, gira en el espacio y atraviesa el plano hasta llegar al centro. No es sólo izquierda o derecha: es dirección, distancia y expectativa.</p><div class="spatial-note"><span>RECOMENDADO</span><p>Auriculares estéreo. Mové el deslizador de distancia mientras escuchás.</p></div></div>
+        <div class="spatial-stage" id="spatial-stage">
+          <div class="spatial-topline"><span>CAMPO BINAURAL / 8D</span><span id="spatial-status" aria-live="polite">ELEGÍ UN PUNTO DE ORIGEN</span></div>
+          <div class="spatial-field" aria-label="Campo de origen del sonido">
+            <i class="spatial-grid grid-a" aria-hidden="true"></i><i class="spatial-grid grid-b" aria-hidden="true"></i><i class="spatial-grid grid-c" aria-hidden="true"></i>
+            <button class="spatial-point point-n" type="button" data-spatial-angle="0" aria-label="Fuente al norte"><span>N</span></button><button class="spatial-point point-ne" type="button" data-spatial-angle="45" aria-label="Fuente al noreste"><span>NE</span></button><button class="spatial-point point-e" type="button" data-spatial-angle="90" aria-label="Fuente al este"><span>E</span></button><button class="spatial-point point-se" type="button" data-spatial-angle="135" aria-label="Fuente al sureste"><span>SE</span></button><button class="spatial-point point-s" type="button" data-spatial-angle="180" aria-label="Fuente al sur"><span>S</span></button><button class="spatial-point point-so" type="button" data-spatial-angle="225" aria-label="Fuente al sudoeste"><span>SO</span></button><button class="spatial-point point-o" type="button" data-spatial-angle="270" aria-label="Fuente al oeste"><span>O</span></button><button class="spatial-point point-no" type="button" data-spatial-angle="315" aria-label="Fuente al noroeste"><span>NO</span></button>
+            <div class="spatial-listener" aria-hidden="true"><i></i><span>VOS</span></div><div class="spatial-trail" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="spatial-controls"><label>Distancia inicial <input id="spatial-distance" type="range" min="1" max="12" value="8" /><output id="spatial-distance-output">08 m</output></label><label>Deriva <input id="spatial-drift" type="range" min="0" max="100" value="48" /><output id="spatial-drift-output">48%</output></label><button id="spatial-stop" type="button">Detener fuente</button></div>
+        </div>
+      </section>
+
+      <section class="hearing-lab" id="umbrales" aria-labelledby="hearing-title">
+        <div class="hearing-console">
+          <div class="hearing-topline"><span>COMPARADOR DE ESCUCHA / EDUCATIVO</span><span id="hearing-status" aria-live="polite">ELEGÍ UN PERFIL</span></div>
+          <div class="hearing-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+          <div class="hearing-profiles" role="group" aria-label="Perfiles de escucha simulados"><button type="button" data-hearing-profile="normal"><span>01</span> Referencia</button><button type="button" data-hearing-profile="highloss"><span>02</span> Agudos atenuados</button><button type="button" data-hearing-profile="muffled"><span>03</span> Sonido amortiguado</button><button type="button" data-hearing-profile="tinnitus"><span>04</span> Tono interno</button></div>
+          <div class="hearing-actions"><button id="hearing-play" type="button">Escuchar paisaje de prueba <span>↗</span></button><button id="hearing-stop" type="button">Silenciar</button></div>
+        </div>
+        <div class="hearing-copy"><span class="section-index">G / 03 · UMBRALES</span><p class="eyebrow">Comparador de percepción auditiva</p><h2 id="hearing-title">No todos los oídos<br /><em>reciben igual.</em></h2><p>Este comparador crea aproximaciones artísticas de cambios en la percepción: pérdida de detalle agudo, amortiguación o un tono persistente. No diagnostica condiciones reales ni reemplaza una consulta profesional.</p><p class="hearing-disclaimer">Para cuidar tus oídos, mantené un volumen cómodo. La experiencia empieza siempre en silencio.</p></div>
+      </section>
+
+      <section class="completion-vault" data-completion-vault hidden aria-labelledby="completion-title"><p class="eyebrow">FINAL SECRETO / ARCHIVO COMPLETO</p><h2 id="completion-title">El museo ya no<br /><em>te está mostrando.</em></h2><p>Ahora escucha contigo. Lo que parecía un recorrido era una forma de entrenar la atención para el mundo que te espera afuera.</p><div class="completion-orbit" aria-hidden="true"><i></i><i></i><i></i><b></b></div><button type="button" data-completion-tone>Dejar una última huella <span>↗</span></button></section>
+
+      <section class="games-footer-cta"><p class="eyebrow">EL JUEGO SIGUE FUERA DE PANTALLA</p><h2>Tu ciudad ya está<br /><em>componiendo algo.</em></h2><a class="circle-link" href="index.html#coleccion"><span>Volver a la<br />colección</span><b>→</b></a></section>
+    </main>
+
+    <footer><a class="wordmark" href="index.html">SONORA<span>®</span></a><p>Museo Digital de la Percepción SONORA<br />Funes · 2026</p><div class="footer-links"><a href="https://instagram.com/fran.dubua/" target="_blank" rel="noreferrer">Instagram</a><button class="contact-copy" type="button" data-contact-email="riojinzxc@gmail.com">Contacto</button><a href="index.html">Inicio</a></div><details class="credits"><summary>Créditos del proyecto <span>+</span></summary><dl><div><dt>Director del Proyecto</dt><dd>Dubois Francisco</dd></div><div><dt>Programador Principal</dt><dd>Dubois Francisco</dd></div><div><dt>Desarrollador web</dt><dd>Da Campo Santiago</dd></div><div><dt>Diseñador UX/UI</dt><dd>Da Campo Santiago</dd></div><div><dt>Diseñador gráfico</dt><dd>Da Campo Santiago, Gemini, ChatGPT</dd></div><div><dt>Director creativo</dt><dd>Da Campo Santiago</dd></div><div><dt>Investigación y contenido</dt><dd>Dubois Francisco, ChatGPT</dd></div><div><dt>Edición de audio</dt><dd>Dubois Francisco</dd></div><div><dt>Testing</dt><dd>Da Campo Santiago, Mosto Joaquín</dd></div><div><dt>Agradecimientos</dt><dd>Soledad Lanzini, 4to "B"</dd></div></dl></details><small><span>© SONORA — Todos los derechos reservados.</span><span class="affiliate">Afiliado con la Compañía 67©</span></small></footer>
+
+    <dialog class="game-dialog" id="game-dialog" aria-labelledby="game-dialog-title">
+      <button class="game-dialog-close" type="button" data-game-close aria-label="Cerrar juego">×</button>
+      <div class="game-dialog-head"><p class="eyebrow" id="game-dialog-kicker">GABINETE SONORA</p><h2 id="game-dialog-title">Juego</h2><p id="game-dialog-description">Una breve experiencia de escucha.</p></div>
+
+      <section class="play-panel" data-game-panel="radar" hidden>
+        <p class="play-instruction">Presioná escuchar y ubicá la frecuencia en el mapa.</p><button class="listen-button" type="button" data-radar-listen><span>◉</span> Escuchar señal</button><div class="answer-row" role="group" aria-label="Elegí la zona de frecuencia"><button type="button" data-radar-answer="grave">Grave</button><button type="button" data-radar-answer="medio">Media</button><button type="button" data-radar-answer="agudo">Aguda</button></div><p class="game-feedback" data-radar-feedback aria-live="polite">La señal espera.</p>
+      </section>
+
+      <section class="play-panel" data-game-panel="eco" hidden>
+        <p class="play-instruction">Cada retorno tarda un tiempo distinto. Escuchá y elegí la distancia de la fuente.</p><button class="listen-button" type="button" data-echo-listen><span>◌</span> Enviar pulso</button><div class="answer-row" role="group" aria-label="Elegí la distancia"><button type="button" data-echo-answer="cerca">Cerca</button><button type="button" data-echo-answer="medio">Media</button><button type="button" data-echo-answer="lejos">Lejos</button></div><p class="game-feedback" data-echo-feedback aria-live="polite">El espacio está en silencio.</p>
+      </section>
+
+      <section class="play-panel" data-game-panel="memoria" hidden>
+        <p class="play-instruction">Escuchá la secuencia. Después repetila con los cuatro pulsos.</p><button class="listen-button" type="button" data-memory-start><span>▷</span> Escuchar secuencia</button><div class="memory-pads" role="group" aria-label="Repetí la secuencia"><button type="button" data-memory-note="c">TIERRA</button><button type="button" data-memory-note="e">AIRE</button><button type="button" data-memory-note="g">AGUA</button><button type="button" data-memory-note="b">LUZ</button></div><p class="game-feedback" data-memory-feedback aria-live="polite">Prepará la memoria.</p>
+      </section>
+
+      <section class="play-panel" data-game-panel="jurador" hidden>
+        <p class="play-instruction" data-jurador-question>En SONORA, ¿qué hace el jurador ante una obra sonora?</p><div class="answer-stack" role="group" data-jurador-options aria-label="Elegí una respuesta"></div><p class="game-feedback" data-jurador-feedback aria-live="polite">No hay apuro: primero se escucha.</p>
+      </section>
+
+      <section class="play-panel" data-game-panel="espacio" hidden>
+        <p class="play-instruction" data-space-question>Un aplauso se prolonga mucho y vuelve varias veces. ¿Qué te sugiere?</p><div class="answer-stack" role="group" data-space-options aria-label="Elegí una respuesta"></div><p class="game-feedback" data-space-feedback aria-live="polite">La arquitectura también se oye.</p>
+      </section>
+
+      <section class="play-panel" data-game-panel="mision" hidden>
+        <p class="play-instruction">Una misión breve para llevar el museo a la calle, al aula o a tu casa.</p><div class="mission-card" data-mission-output>Buscá un sonido que tenga un pulso. No lo nombres durante un minuto.</div><button class="listen-button mission-button" type="button" data-mission-new>Generar otra misión <span>↻</span></button>
+      </section>
+
+      <section class="play-panel" data-game-panel="interferencia" hidden>
+        <p class="play-instruction" data-interference-prompt>Una señal intenta atravesar una textura. Escuchá dos veces y decidí en qué intervalo apareció.</p><button class="listen-button" type="button" data-interference-listen><span>≋</span> Escuchar mezcla</button><div class="answer-row" role="group" aria-label="Elegí dónde apareció la señal"><button type="button" data-interference-answer="primero">Primer intervalo</button><button type="button" data-interference-answer="segundo">Segundo intervalo</button><button type="button" data-interference-answer="ninguno">No apareció</button></div><p class="game-feedback" data-interference-feedback aria-live="polite">La señal está oculta dentro de la mezcla.</p>
+      </section>
+
+      <section class="play-panel" data-game-panel="dilema" hidden>
+        <p class="play-instruction" data-dilemma-question>Una grabación de una plaza conserva risas, motores y la voz de una niña. Tiene ruido y cortes. ¿Cómo la archivarías?</p><div class="answer-stack" role="group" data-dilemma-options><button type="button">Limpiar todo hasta dejar sólo la voz.</button><button type="button">Conservar una copia original y documentar sus capas.</button><button type="button">Descartarla: hay demasiadas interferencias.</button></div><p class="game-feedback" data-dilemma-feedback aria-live="polite">No se trata de acertar rápido: se trata de sostener una decisión.</p>
+      </section>
+    </dialog>
+
+    <dialog class="omega-dialog" id="omega-dialog" aria-labelledby="omega-title"><button class="omega-close" type="button" data-omega-close aria-label="Cerrar archivo clasificado">×</button><p>ARCHIVO Ω-17 / CLASIFICADO</p><h2 id="omega-title">El siguiente audio fue retirado de todas las investigaciones oficiales.</h2><div class="omega-field" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div><button type="button" data-omega-play>REPRODUCIR</button><label>VOLUMEN <input type="range" min="0" max="100" value="38" data-omega-volume /><output data-omega-output>38%</output></label></dialog>
+
+    <script src="museum-sounds.js"></script>
+    <script src="ambient.js"></script>
+    <script src="museum-ui.js"></script>
+    <script src="juegos.js"></script>
+    <script src="spatial-audio.js"></script>
+    <script src="hearing-lab.js"></script>
+    <script src="omega-archive.js"></script>
+    <script src="achievements.js"></script>
+    <script src="spatial-ui.js"></script>
+  </body>
+</html>
