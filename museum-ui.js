@@ -118,4 +118,18 @@
   });
   document.querySelector('[data-secret-close]')?.addEventListener('click', () => secretRoom?.close());
   secretRoom?.addEventListener('click', event => { if (event.target === secretRoom) secretRoom.close(); });
+
+  const scrollProgress = document.createElement('div');
+  scrollProgress.className = 'scroll-progress';
+  scrollProgress.setAttribute('aria-hidden', 'true');
+  scrollProgress.innerHTML = '<span></span>';
+  document.body.append(scrollProgress);
+  const updateScrollProgress = () => {
+    const availableScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = availableScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / availableScroll)) : 0;
+    scrollProgress.firstElementChild.style.transform = `scaleX(${progress})`;
+  };
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress);
+  updateScrollProgress();
 })();
